@@ -14,7 +14,7 @@ for n in 1 2 3 4; do
     
         
 
-        if diff -u "${base}.1.txt" "${comp}"; then
+        if cmp -s "${base}.1.txt" "${comp}"; then
             :
         else 
 	    mkdir -p "$outdir"
@@ -23,5 +23,3 @@ for n in 1 2 3 4; do
 
     done
 done
-
-echo "done"
